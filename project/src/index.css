@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 355 32% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 355 32% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 355 32% 20%;
+    --primary: 355 78% 66%;
+    --primary-foreground: 355 40% 98%;
+    --secondary: 355 20% 96%;
+    --secondary-foreground: 355 32% 20%;
+    --muted: 355 20% 96%;
+    --muted-foreground: 355 32% 45%;
+    --accent: 355 78% 96%;
+    --accent-foreground: 355 78% 66%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 355 20% 92%;
+    --input: 355 20% 92%;
+    --ring: 355 78% 66%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 355 32% 10%;
+    --foreground: 355 20% 98%;
+    --card: 355 32% 12%;
+    --card-foreground: 355 20% 98%;
+    --popover: 355 32% 12%;
+    --popover-foreground: 355 20% 98%;
+    --primary: 355 78% 66%;
+    --primary-foreground: 355 20% 98%;
+    --secondary: 355 32% 20%;
+    --secondary-foreground: 355 20% 98%;
+    --muted: 355 32% 20%;
+    --muted-foreground: 355 20% 70%;
+    --accent: 355 32% 20%;
+    --accent-foreground: 355 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 355 20% 98%;
+    --border: 355 32% 20%;
+    --input: 355 32% 20%;
+    --ring: 355 78% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Smooth transitions */
+.transition-all {
+  @apply duration-300 ease-in-out;
+}
+
+/* Hover effects */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+/* Card animations */
+.card-enter {
+  animation: card-in 0.5s ease-out;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
